@@ -8,6 +8,7 @@ import Profile from './components/Profile'
 import AddRecipe from './components/AddRecipe'
 import About from './components/About'
 import Client from './services/api.js'
+import RecipePage from './components/RecipePage'
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path='/profile' element={<Profile />}/>
           <Route path='/addrecipe' element={<AddRecipe />}/>
           <Route path='/about' element={<About />}/>
+          <Route path="/dishes/:dishId/recipes" element={<RecipePage />} />
         </Routes>
       </main>
     </div>
