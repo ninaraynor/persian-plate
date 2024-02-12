@@ -40,3 +40,53 @@
 .read-the-docs {
   color: #888;
 }
+
+.dishes-container {
+    padding: 20px;
+}
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minmax value for responsiveness */
+    grid-gap: 20px;
+}
+
+.dish-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.dish-card h2,
+.dish-card h3 {
+    margin: 0;
+}
+
+.dish-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.dishes-container {
+  padding: 20px;
+}
+
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.dish-card {
+  border: 1px solid #ffffff;
+  padding: 10px;
+}
+
+.dish-card h2,
+.dish-card h3 {
+  margin: 0;
+}
+
+.dish-card img {
+  max-width: 100%;
+  height: auto;
+}
