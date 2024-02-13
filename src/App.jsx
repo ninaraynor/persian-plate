@@ -29,11 +29,6 @@ function App() {
     }
   }, [])
 
-  const handleLogOut = () => {
-    setUser(null)
-    localStorage.clear()
-  }
-
   useEffect(() => {
     const getDishes = async () => {
       let res = await Client.get('/dishes')
@@ -42,10 +37,15 @@ function App() {
     getDishes()
   }, [])
 
+  const handleLogOut = () => {
+    setUser(null)
+    localStorage.clear()
+  }
+
   return (
     <div>
       <header>
-        <Nav user={user}/>
+        <Nav user={user} handleLogOut={handleLogOut}/>
       </header>
       <main>
         <Routes>

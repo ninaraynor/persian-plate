@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { SignInUser} from '../services/Auth'
+import { SignInUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
 
 const SignIn = (props) => {
-
   let navigate = useNavigate()
 
   const [formValues, setFormValues] = useState({ email: '', password: '' })
@@ -15,7 +14,7 @@ const SignIn = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const payload = await SignInUser(formValues)
-    setFormValues({email: '', password:''})
+    setFormValues({ email: '', password: '' })
     props.setUser(payload)
     navigate('/')
   }
@@ -49,6 +48,11 @@ const SignIn = (props) => {
             Sign In
           </button>
         </form>
+        {props.user && (
+          <button onClick={handleLogOut}>
+            Sign Out
+          </button>
+        )}
       </div>
     </div>
   )
