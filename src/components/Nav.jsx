@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 const Nav = ( {user, handleLogOut} ) => { 
   return (
     <header>
+      <nav>
       <Link to="/">
         <div>
           {user ? (
@@ -25,6 +26,7 @@ const Nav = ( {user, handleLogOut} ) => {
           )}
         </div>
       </Link>
+      </nav>
     </header>
 
     )
