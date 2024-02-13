@@ -9,11 +9,31 @@ import AddRecipe from './components/AddRecipe'
 import About from './components/About'
 import Client from './services/api.js'
 import RecipePage from './components/RecipePage'
+import Register from './pages/Register'
+import SignIn from './pages/SignIn'
 
 
 function App() {
-
+  const [user, setUser] = useState(null);
   const [dishes, setDishes] = useState([])
+
+  const checkToken = async () => {
+    const user = await CheckSession()
+    setUser(user)
+  }
+
+  useEffect(()=> {
+    const token = localStorage.getItem('token')
+    if (token)   {
+      checkToken()
+    }
+  }, [])
+
+  const handleLogOut = () => {
+    setUser(null)
+    localStorage.clear()
+  }
+
 
   useEffect(() => {
     const getDishes = async () => {
@@ -36,6 +56,8 @@ function App() {
           <Route path='/addrecipe' element={<AddRecipe />}/>
           <Route path='/about' element={<About />}/>
           <Route path="/dishes/:dishId/recipes" element={<RecipePage />} />
+          <Route path="/signin" element={<SignIn setUser={setUser} />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </main>
     </div>
