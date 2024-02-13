@@ -14,15 +14,6 @@ const Nav = ( {user, handleLogOut} ) => {
         )
       }
 
-      const publicOptions = (
-        <nav className="navbar">
-          <Link to="/">Home</Link>
-          <Link to="/register">Register</Link>
-          <Link to="/signin">Sign In</Link>
-          <Link to="/dishes">Dishes</Link>
-          <Link to="/about">About</Link>
-        </nav>
-      )
 
 return (
   <header>
@@ -30,13 +21,25 @@ return (
       <div>
         {user ? (
           <div>
+            <Link to="/">Home</Link>
+            <Link to="/register">Register</Link>
+            <Link to="/signin">Sign In</Link>
+            <Link to="/dishes">Dishes</Link>
+            <Link to="/about">About</Link>
             <Link to="/profile">Profile</Link>
             <Link to="/addrecipe">Add A Recipe</Link>
           </div>
-        ) : null}
+        ) : (
+          <div>
+            <Link to="/">Home</Link>
+            <Link to="/register">Register</Link>
+            <Link to="/signin">Sign In</Link>
+            <Link to="/dishes">Dishes</Link>
+            <Link to="/about">About</Link>
+          </div>
+        )}
       </div>
     </Link>
-    {user ? userOptions : publicOptions}
   </header>
     )
 }

@@ -11,7 +11,7 @@ import Client from './services/api.js'
 import RecipePage from './components/RecipePage'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
-
+import { CheckSession } from './services/Auth.js'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -34,7 +34,6 @@ function App() {
     localStorage.clear()
   }
 
-
   useEffect(() => {
     const getDishes = async () => {
       let res = await Client.get('/dishes')
@@ -46,7 +45,7 @@ function App() {
   return (
     <div>
       <header>
-        <Nav />
+        <Nav user={user}/>
       </header>
       <main>
         <Routes>
