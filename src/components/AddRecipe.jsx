@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import Client from '../services/api';
+import React, { useState, useEffect } from 'react'
+import Client from '../services/api'
+
 
 const RecipeForm = ({ recipe }) => {
     const initialFormState = {
@@ -16,6 +17,20 @@ const RecipeForm = ({ recipe }) => {
     };
 
     const [form, setForm] = useState(initialFormState);
+    const [dishes, setDishes] = useState([]);
+
+    useEffect(() => {
+        const fetchDishes = async () => {
+            try {
+                const response = await Client.get('/dishes')
+                setDishes(response.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchDishes()
+    }, [])
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -55,16 +70,19 @@ const RecipeForm = ({ recipe }) => {
     return (
         <div>
             <form onSubmit={handleSubmit} className="recipeForm">
-            <div className="formDiv">
+                <div className="formDiv">
                     <label htmlFor="recipeType">Dish Type:</label>
-                    <input
-                        type="text"
+                    <select
                         name="recipeType"
-                        placeholder="Enter Dish Type"
                         onChange={handleChange}
                         value={form.recipeType}
-                    />
-                </div>
+                    >
+                        <option value="">Select a Dish</option>
+                        {dishes.map(dish => (
+                            <option key={dish._id} value={dish._id}>{dish.name}</option>
+                        ))}
+                    </select>
+                 </div>
 
                 <div className="formDiv">
                     <label htmlFor="title">Title:</label>
