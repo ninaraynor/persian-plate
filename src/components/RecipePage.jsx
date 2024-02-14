@@ -4,7 +4,6 @@ import Recipe from './Recipe'
 import Client from '../services/api'
 
 
-
 const RecipePage = () => {
     const { dishId } = useParams();
     const [recipes, setRecipes] = useState(null)
@@ -19,7 +18,6 @@ const RecipePage = () => {
                 console.error('Error fetching recipes:', error);
             }
         }
-        
         fetchRecipes()
     }, [dishId])
 
@@ -34,4 +32,3 @@ const RecipePage = () => {
 }
 
 export default RecipePage
-

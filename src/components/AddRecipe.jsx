@@ -6,8 +6,8 @@ const RecipeForm = ({ recipe }) => {
     const initialFormState = {
         title: '', 
         portionSize: '', 
-        prepTime: { value: '', unit: '' }, 
-        cookingTime: { value: '', unit: '' }, 
+        prepTime: { value: '', unit: 'minutes' }, 
+        cookingTime: { value: '', unit: 'minutes' }, 
         ingredients: [], 
         fullName: '', 
         familyOrigin: '', 
@@ -47,7 +47,7 @@ const RecipeForm = ({ recipe }) => {
         }
     }
     
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -56,12 +56,12 @@ const RecipeForm = ({ recipe }) => {
                 title: form.title,
                 portionSize: form.portionSize,
                 prepTime: {
-                    value: form.prepTimeValue,
-                    unit: form.prepTimeUnit
+                    value: form.prepTime.value,
+                    unit: form.prepTime.unit
                 },
                 cookingTime: {
-                    value: form.cookingTimeValue,
-                    unit: form.cookingTimeUnit
+                    value: form.cookingTime.value,
+                    unit: form.cookingTime.unit
                 },
                 ingredients: form.ingredients,
                 fullName: form.fullName,
