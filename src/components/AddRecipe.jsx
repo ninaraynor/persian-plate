@@ -31,10 +31,17 @@ const RecipeForm = ({ recipe }) => {
         fetchDishes()
     }, [])
 
-
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setForm({ ...form, [name]: value });
+        if (name === 'prepTime.value' || name === 'cookingTime.value') {
+            const [field, subfield] = name.split('.')
+            setForm({
+                ...form,
+                [field]: { ...form[field], [subfield]: value }
+            });
+        } else {
+            setForm({ ...form, [name]: value });
+        }
     }
 
     const handleSubmit = async (e) => {
