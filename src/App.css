@@ -60,37 +60,29 @@ nav a:hover {
     height: auto;
 }
 
-.dishes-container {
+.recipes-container {
   padding: 20px;
 }
 
-.dishes-grid {
+.recipes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minmax value for responsiveness */
   grid-gap: 20px;
 }
 
-.dish-card {
-  border: 1px solid #ffffff;
+.recipe-card {
+  border: 1px solid #ccc;
   padding: 10px;
 }
 
-.dish-card h2,
-.dish-card h3 {
+.recipe-card h2,
+.recipe-card h3 {
   margin: 0;
 }
 
-.dish-card img {
+.recipe-card img {
   max-width: 100%;
   height: auto;
 }
 
-@media (max-width: 200px) {
-  .formDiv select {
-    position: absolute;
-    width: 100%; /* Set the width to match the parent's width */
-    top: 50%; /* Position the dropdown below the parent */
-    left: 30; /* Align the dropdown with the left edge of the parent */
-    z-index: 1;
-  }
-}
+

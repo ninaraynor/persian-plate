@@ -22,12 +22,16 @@ const RecipePage = () => {
     }, [dishId])
 
     return (
-        <div>
+        <div className="recipes-container">
             <h1>Recipes for Dish</h1>
+            <div className="recipes-grid">
             {recipes && recipes.map(recipe => (
-                <Recipe key={recipe.id} recipe={recipe} />
+                <div className='recipe-card'> 
+                    <Recipe key={recipe.id} recipe={recipe} />
+                </div>
             ))}
         </div>
+    </div>
     )
 }
 
