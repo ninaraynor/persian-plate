@@ -84,3 +84,13 @@ nav a:hover {
   max-width: 100%;
   height: auto;
 }
+
+@media (max-width: 200px) {
+  .formDiv select {
+    position: absolute;
+    width: 100%; /* Set the width to match the parent's width */
+    top: 50%; /* Position the dropdown below the parent */
+    left: 30; /* Align the dropdown with the left edge of the parent */
+    z-index: 1;
+  }
+}

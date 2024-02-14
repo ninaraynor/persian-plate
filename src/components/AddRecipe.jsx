@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Client from '../services/api'
 
 
@@ -35,13 +35,13 @@ const RecipeForm = ({ recipe }) => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value });
-    };
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const newRecipe = {
-                recipeType: recipe._id,
+                recipeType: dish._id,
                 title: form.title,
                 portionSize: form.portionSize,
                 prepTime: {
@@ -79,7 +79,7 @@ const RecipeForm = ({ recipe }) => {
                     >
                         <option value="">Select a Dish</option>
                         {dishes.map(dish => (
-                            <option key={dish._id} value={dish._id}>{dish.name}</option>
+                        <option key={dish._id} value={dish._id}>{dish.title}</option>
                         ))}
                     </select>
                  </div>
