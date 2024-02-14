@@ -6,8 +6,8 @@ const Recipe = ({ recipe }) => {
             <h1>{recipe.title}</h1>
             <div className="recipe-details">
                 <p>Portion Size: {recipe.portionSize}</p>
-                <p>Prep Time: {recipe.prepTime.value} {recipe.prepTime.unit}</p>
-                <p>Cooking Time: {recipe.cookingTime.value} {recipe.cookingTime.unit}</p>
+                {/* <p>Prep Time: {recipe.prepTime.value} {recipe.prepTime.unit}</p>
+                <p>Cooking Time: {recipe.cookingTime.value} {recipe.cookingTime.unit}</p> */}
                 <h2>Ingredients:</h2>
                 <ul>
                     {recipe.ingredients.map((ingredient, index) => (

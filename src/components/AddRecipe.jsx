@@ -33,22 +33,26 @@ const RecipeForm = ({ recipe }) => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        if (name === 'prepTime.value' || name === 'cookingTime.value') {
-            const [field, subfield] = name.split('.')
+        if (name.includes('prepTime') || name.includes('cookingTime')) {
+            const [field, subfield] = name.split('.');
             setForm({
                 ...form,
                 [field]: { ...form[field], [subfield]: value }
             });
+        } else if (name === 'uniqueIngredients') {
+            const ingredientsArray = value.split(',').map(ingredient => ingredient.trim());
+            setForm({ ...form, [name]: ingredientsArray });
         } else {
             setForm({ ...form, [name]: value });
         }
     }
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const newRecipe = {
-                recipeType: dish._id,
+                recipeType: form.recipeType,
                 title: form.title,
                 portionSize: form.portionSize,
                 prepTime: {
@@ -114,7 +118,7 @@ const RecipeForm = ({ recipe }) => {
                 </div>
 
                 <div className="formDiv">
-                    <label htmlFor="prepTime.value">Preparation Time (in seconds):</label>
+                    <label htmlFor="prepTime.value">Preparation Time:</label>
                     <input
                         type="number"
                         name="prepTime.value"
@@ -125,21 +129,21 @@ const RecipeForm = ({ recipe }) => {
                 </div>
 
                 <div className="formDiv">
-                    <label htmlFor="prepTime.unit">Preparation Time Unit:</label>
+                    <label htmlFor="prepTime.unit">Preparation Unit:</label>
                     <select
                         name="prepTime.unit"
                         onChange={handleChange}
                         value={form.prepTime.unit}
                     >
-                        <option value="seconds">Seconds</option>
-                        <option value="minutes">Minutes</option>
-                        <option value="hours">Hours</option>
-                        <option value="days">Days</option>
+                        <option value="seconds">Second(s)</option>
+                        <option value="minutes">Minute(s)</option>
+                        <option value="hours">Hour(s)</option>
+                        <option value="days">Day(s)</option>
                     </select>
                 </div>
 
                 <div className="formDiv">
-                    <label htmlFor="cookingTime.value">Cooking Time (in seconds):</label>
+                    <label htmlFor="cookingTime.value">Cooking Time:</label>
                     <input
                         type="number"
                         name="cookingTime.value"
@@ -150,16 +154,16 @@ const RecipeForm = ({ recipe }) => {
                 </div>
 
                 <div className="formDiv">
-                    <label htmlFor="cookingTime.unit">Cooking Time Unit:</label>
+                    <label htmlFor="cookingTime.unit">Cooking Unit:</label>
                     <select
                         name="cookingTime.unit"
                         onChange={handleChange}
                         value={form.cookingTime.unit}
                     >
-                        <option value="seconds">Seconds</option>
-                        <option value="minutes">Minutes</option>
-                        <option value="hours">Hours</option>
-                        <option value="days">Days</option>
+                        <option value="seconds">Second(s)</option>
+                        <option value="minutes">Minute(s)</option>
+                        <option value="hours">Hour(s)</option>
+                        <option value="days">Day(s)</option>
                     </select>
                 </div>
 
