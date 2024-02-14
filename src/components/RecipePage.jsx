@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Recipe from './Recipe'
 import Client from '../services/api'
+import { Link } from 'react-router-dom'
 
 
 const RecipePage = () => {
@@ -25,14 +26,15 @@ const RecipePage = () => {
         <div className="recipes-container">
             <h1>Recipes for Dish</h1>
             <div className="recipes-grid">
-            {recipes && recipes.map(recipe => (
-                <div className='recipe-card'> 
-                    <Recipe key={recipe.id} recipe={recipe} />
-                </div>
-            ))}
+                {recipes && recipes.map(recipe => (
+                    <div className='recipe-card' key={recipe._id}>
+                        <Recipe recipe={recipe} />
+                        <Link to={`/recipes/${recipe._id}`}>View Recipe</Link>
+                    </div>
+                ))}
+            </div>
         </div>
-    </div>
-    )
-}
+    );
+};
 
 export default RecipePage
