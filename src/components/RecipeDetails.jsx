@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Client from '../services/api'
 import Recipe from './Recipe'
+import { Link } from 'react-router-dom'
 
 
 const RecipeDetails = () => {
@@ -32,6 +33,7 @@ const RecipeDetails = () => {
             console.error('Error deleting recipe:', error)
         }
     }
+    //res.redirect
 
     return (
         <div className="recipe-details-container">
@@ -42,6 +44,7 @@ const RecipeDetails = () => {
                 </>
             )}
             {deleted && <p>Recipe deleted.</p>}
+            
         </div>
     )
 }

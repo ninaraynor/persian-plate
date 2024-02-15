@@ -39,7 +39,9 @@ const RecipePage = () => {
                     </div>
                 ))}
             </div>
+            <Link to="/dishes"><button className="dishes-button"> Back to Dishes</button></Link>
         </div>
+        
     );
 };
 
