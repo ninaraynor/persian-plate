@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 const RecipeDetails = () => {
     const { recipeId } = useParams()
     const [recipe, setRecipe] = useState(null)
+    const [dish, setDish] = useState(null)
     const [deleted, setDeleted] = useState(false)
 
     useEffect(() => {
@@ -44,7 +45,7 @@ const RecipeDetails = () => {
                 </>
             )}
             {deleted && <p>Recipe deleted.</p>}
-            
+            <Link to="/dishes"><button className="dishes-button"> Back to Recipes</button></Link>
         </div>
     )
 }

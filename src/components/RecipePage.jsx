@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import Recipe from './Recipe'
 import Client from '../services/api'
 import { Link } from 'react-router-dom'
 
