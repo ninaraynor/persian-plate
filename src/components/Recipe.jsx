@@ -3,12 +3,12 @@
 const Recipe = ({ recipe }) => {
     return (
         <div className="recipe-container">
-            <h1>{recipe.title}</h1>
+            <h3>{recipe.title}</h3>
             <div className="recipe-details">
                 <p>Portion Size: {recipe.portionSize}</p>
                 <p>Prep Time: {!!recipe.prepTime && recipe.prepTime.value} {!!recipe.prepTime && recipe.prepTime.unit}</p>
                 <p>Cooking Time: {!!recipe.cookingTime && recipe.cookingTime.value} {!!recipe.cookingTime && recipe.cookingTime.unit}</p>
-                <h2>Ingredients:</h2>
+                <p>Ingredients:</p>
                 <ul>
                     {recipe.ingredients.map((ingredient, index) => (
                         <li key={index}>{ingredient.name} - {ingredient.quantity} {ingredient.unit}</li>
@@ -16,7 +16,7 @@ const Recipe = ({ recipe }) => {
                 </ul>
                 <p>Full Name: {recipe.fullName}</p>
                 <p>Family Origin: {recipe.familyOrigin}</p>
-                <h2>Unique Ingredients:</h2>
+                <p>Unique Ingredients:</p>
                 <ul>
                     {recipe.uniqueIngredients.map((uniqueIngredient, index) => (
                         <li key={index}>{uniqueIngredient}</li>
@@ -24,11 +24,11 @@ const Recipe = ({ recipe }) => {
                 </ul>
                 <p>Instructions: {recipe.instructions}</p>
                 <p>Created At: {new Date(recipe.createdAt).toLocaleString()}</p>
-            </div>
             <div className="recipe-image">
                 <img src={recipe.photo} alt={recipe.title} />
             </div>
         </div>
+    </div>
     )
 }
 

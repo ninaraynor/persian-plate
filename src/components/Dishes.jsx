@@ -7,7 +7,7 @@ const Dishes = ({ dishes }) => {
             <div className="dishes-grid">
             {dishes.map(dish => (
                 <div key={dish._id} className="dish-card">
-                <h3>{dish.title}</h3>
+                <h4>{dish.title}</h4>
                 <p>{dish.description}</p>
                 <img src={dish.image} alt={dish.title}/>
                 <Link to={`/dishes/${dish._id}/recipes`}>View Recipes</Link>

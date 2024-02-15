@@ -27,7 +27,7 @@ const RecipePage = () => {
             <div className="recipes-grid">
                 {recipes && recipes.map(recipe => (
                     <div className='recipe-card' key={recipe._id}>
-                        <h3>{recipe.title}</h3>
+                        <h4>{recipe.title}</h4>
                         <div className="recipe-page-details">
                         <p>Family Origin: {recipe.familyOrigin}</p>
                         <p>Unique Ingredients:</p>
