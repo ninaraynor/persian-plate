@@ -1,51 +1,30 @@
-import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import Client from '../services/api'
-import AddRecipe from './AddRecipe'
+import Recipe from './Recipe'
+
 
 const RecipeDetails = () => {
-  const { recipeId } = useParams();
-  const [recipe, setRecipe] = useState({})
+    const { recipeId } = useParams()
+    const [recipe, setRecipe] = useState(null)
 
-  const fetchRecipe = async () => {
-    try {
-      const response = await Client.get(`/recipes/${recipeId}`)
-      setRecipe(response.data)
-    } catch (error) {
-      console.error('Error fetching recipe:', error)
-    }
-  }
+    useEffect(() => {
+        const fetchRecipe = async () => {
+            try {
+                const response = await Client.get(`/recipes/${recipeId}`)
+                setRecipe(response.data)
+            } catch (error) {
+                console.error('Error fetching recipe:', error)
+            }
+        }
+        fetchRecipe()
+    }, [recipeId])
 
-  useEffect(() => {
-    fetchRecipe()
-  }, [recipeId])
-
-  return (
-    <div className="detail">
-      <h2>{recipe.title}</h2>
-      <p>Category: {recipe.category}</p>
-      <p>Ingredients:</p>
-      <ul>
-        {recipe.ingredients ? (
-          recipe.ingredients.map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
-          ))
-        ) : (
-          <li>No ingredients available</li>
-        )}
-      </ul>
-      <p>Instructions:</p>
-      <ol>
-        {recipe.instructions ? (
-          recipe.instructions.map((instruction, index) => (
-            <li key={index}>{instruction}</li>
-          ))
-        ) : (
-          <li>No instructions available</li>
-        )}
-      </ol>
-    </div>
-  )
+    return (
+        <div className="recipe-details-container">
+            {recipe && <Recipe recipe={recipe} />}
+        </div>
+    )
 }
 
 export default RecipeDetails

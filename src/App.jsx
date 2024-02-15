@@ -12,7 +12,7 @@ import RecipePage from './components/RecipePage'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import { CheckSession } from './services/Auth.js'
-import RecipeDetails from './components/RecipeDetails.jsx'
+import RecipeDetails from './components/RecipeDetails'
 
 
 function App() {
@@ -59,6 +59,7 @@ function App() {
           <Route path='/dishes/:dishId/recipes' element={<RecipePage />} />
           <Route path='/signin' element={<SignIn setUser={setUser} />} />
           <Route path='/register' element={<Register />} />
+          <Route path="/recipes" element={RecipePage} />
           <Route path="/recipes/:recipeId" component={RecipeDetails} />
         </Routes>
       </main>
