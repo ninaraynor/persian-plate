@@ -6,12 +6,11 @@ import { Link } from 'react-router-dom'
 
 
 const RecipePage = () => {
-    const { dishId } = useParams();
+    const { dishId } = useParams()
     const [recipes, setRecipes] = useState(null)
 
     useEffect(() => {
         const fetchRecipes = async () => {
-            console.log('fetch recipes')
             try {
                 const response = await Client.get(`/recipes/dishes/${dishId}`);
                 setRecipes(response.data);

@@ -12,9 +12,11 @@ import RecipePage from './components/RecipePage'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import { CheckSession } from './services/Auth.js'
+import RecipeDetails from './components/RecipeDetails.jsx'
+
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null)
   const [dishes, setDishes] = useState([])
 
   const checkToken = async () => {
@@ -22,9 +24,9 @@ function App() {
     setUser(user)
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     const token = localStorage.getItem('token')
-    if (token)   {
+    if (token) {
       checkToken()
     }
   }, [])
@@ -38,25 +40,26 @@ function App() {
   }, [])
 
   const handleLogOut = () => {
-    setUser(null)
+    setUser(null);
     localStorage.clear()
   }
 
   return (
     <div>
       <header>
-        <Nav user={user} handleLogOut={handleLogOut}/>
+        <Nav user={user} handleLogOut={handleLogOut} />
       </header>
       <main>
         <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/dishes' element={<Dishes dishes={dishes}/>}/>
-          <Route path='/profile' element={<Profile />}/>
-          <Route path='/addrecipe' element={<AddRecipe />}/>
-          <Route path='/about' element={<About />}/>
-          <Route path="/dishes/:dishId/recipes" element={<RecipePage />} />
-          <Route path="/signin" element={<SignIn setUser={setUser} />} />
-          <Route path="/register" element={<Register />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/dishes' element={<Dishes dishes={dishes} />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/addrecipe' element={<AddRecipe />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/dishes/:dishId/recipes' element={<RecipePage />} />
+          <Route path='/signin' element={<SignIn setUser={setUser} />} />
+          <Route path='/register' element={<Register />} />
+          <Route path="/recipes/:recipeId" component={RecipeDetails} />
         </Routes>
       </main>
     </div>
