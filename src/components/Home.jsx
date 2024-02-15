@@ -2,7 +2,9 @@
 
 const Home = () => {
     return (
-        <div>Persian Plate</div>
+        <div className="home">
+            <h1>Persian Plate</h1>
+        </div>
     )
 }
 

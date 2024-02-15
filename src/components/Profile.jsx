@@ -3,7 +3,6 @@ import axios from 'axios'
 
 const Profile = ({ userId }) => {
   const [userRecipes, setUserRecipes] = useState([])
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchUserRecipes = async () => {
@@ -31,17 +30,17 @@ const Profile = ({ userId }) => {
 
   return (
     <div className="profile">
-      <h1>My Profile</h1>
-      <h2>My Recipes</h2>
+      <h2>My Profile</h2>
+      <h3>My Recipes</h3>
       <div className="recipe-list">
         {userRecipes.map(recipe => (
           <div key={recipe.id} className="recipe-view-card">
-            <h3>{recipe.title}</h3>
+            <h4>{recipe.title}</h4>
             <div className="recipe-details">
                 <p>Portion Size: {recipe.portionSize}</p>
                 <p>Prep Time: {!!recipe.prepTime && recipe.prepTime.value} {!!recipe.prepTime && recipe.prepTime.unit}</p>
                 <p>Cooking Time: {!!recipe.cookingTime && recipe.cookingTime.value} {!!recipe.cookingTime && recipe.cookingTime.unit}</p>
-                <h2>Ingredients:</h2>
+                <p>Ingredients:</p>
                 <ul>
                     {recipe.ingredients.map((ingredient, index) => (
                         <li key={index}>{ingredient.name} - {ingredient.quantity} {ingredient.unit}</li>
@@ -49,7 +48,7 @@ const Profile = ({ userId }) => {
                 </ul>
                 <p>Full Name: {recipe.fullName}</p>
                 <p>Family Origin: {recipe.familyOrigin}</p>
-                <h2>Unique Ingredients:</h2>
+                <p>Unique Ingredients:</p>
                 <ul>
                     {recipe.uniqueIngredients.map((uniqueIngredient, index) => (
                         <li key={index}>{uniqueIngredient}</li>

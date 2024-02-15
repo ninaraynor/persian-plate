@@ -84,6 +84,7 @@ const RecipeForm = ({ recipe, userId }) => {
     return (
         <div>
             <form onSubmit={handleSubmit} className="recipeForm">
+                <h2>Add A Recipe</h2>
                 <div className="formDiv">
                     <label htmlFor="recipeType">Dish Type:</label>
                     <select

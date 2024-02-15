@@ -35,6 +35,15 @@ h1 {
   padding: 25px;
 }
 
+h2 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 25px;
+  font-size: 2em;
+}
+
 .card {
   padding: 2em;
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Dishes = ({ dishes }) => {
     return (
         <div className="dishes-container">
-            <h1>Dishes</h1>
+            <h2>Dishes</h2>
             <div className="dishes-grid">
             {dishes.map(dish => (
                 <div key={dish._id} className="dish-card">
