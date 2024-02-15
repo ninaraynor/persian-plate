@@ -85,4 +85,20 @@ nav a:hover {
   height: auto;
 }
 
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 

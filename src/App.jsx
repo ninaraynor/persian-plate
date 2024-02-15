@@ -13,6 +13,7 @@ import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import { CheckSession } from './services/Auth.js'
 import RecipeDetails from './components/RecipeDetails'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
           <Route path="/recipes/:recipeId" component={RecipeDetails} />
         </Routes>
       </main>
+      <Footer />
     </div>
   )
 }
