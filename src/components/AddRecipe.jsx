@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import Client from '../services/api'
 
 
-const RecipeForm = ({ recipe }) => {
+const RecipeForm = ({ recipe, userId }) => {
     const initialFormState = {
+        createdBy: userId,
         title: '', 
         portionSize: '', 
         prepTime: { value: '', unit: 'minutes' }, 
@@ -18,6 +19,7 @@ const RecipeForm = ({ recipe }) => {
 
     const [form, setForm] = useState(initialFormState);
     const [dishes, setDishes] = useState([]);
+    
 
     useEffect(() => {
         const fetchDishes = async () => {
@@ -52,6 +54,7 @@ const RecipeForm = ({ recipe }) => {
         e.preventDefault();
         try {
             const newRecipe = {
+                createdBy: form.createdBy,
                 recipeType: form.recipeType,
                 title: form.title,
                 portionSize: form.portionSize,
