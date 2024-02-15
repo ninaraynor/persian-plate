@@ -27,6 +27,14 @@ nav a:hover {
   text-decoration: underline;
 }
 
+h1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 25px;
+}
+
 .card {
   padding: 2em;
 }
@@ -41,7 +49,7 @@ nav a:hover {
 
 .dishes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minmax value for responsiveness */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
 }
 
@@ -66,13 +74,16 @@ nav a:hover {
 
 .recipes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minmax value for responsiveness */
+  justify-content: center; 
+  align-items: center;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
   grid-gap: 20px;
 }
 
 .recipe-card {
   border: 1px solid #ccc;
   padding: 10px;
+  text-align: center; 
 }
 
 .recipe-card h2,
@@ -84,6 +95,7 @@ nav a:hover {
   max-width: 100%;
   height: auto;
 }
+
 
 .footer {
   background-color: #333;
@@ -101,4 +113,9 @@ nav a:hover {
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+  .recipes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  }
+}
 

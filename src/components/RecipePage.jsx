@@ -23,12 +23,19 @@ const RecipePage = () => {
 
     return (
         <div className="recipes-container">
-            <h1>Recipes for Dish</h1>
+            <h1>Recipes</h1>
             <div className="recipes-grid">
                 {recipes && recipes.map(recipe => (
                     <div className='recipe-card' key={recipe._id}>
-                        <Recipe recipe={recipe} />
+                        <h3>{recipe.title}</h3>
+                        <div className="recipe-page-details">
+                        <p>Family Origin: {recipe.familyOrigin}</p>
+                        <p>Unique Ingredients:</p>
+                        <div className="recipe-image">
+                            <img src={recipe.photo} alt={recipe.title} />
+                        </div>
                         <Link to={`/recipes/${recipe._id}`}>View Recipe</Link>
+                    </div>
                     </div>
                 ))}
             </div>
