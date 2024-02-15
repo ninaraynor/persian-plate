@@ -7,6 +7,7 @@ import Recipe from './Recipe'
 const RecipeDetails = () => {
     const { recipeId } = useParams()
     const [recipe, setRecipe] = useState(null)
+    const [deleted, setDeleted] = useState(false)
 
     useEffect(() => {
         const fetchRecipe = async () => {
@@ -18,11 +19,29 @@ const RecipeDetails = () => {
             }
         }
         fetchRecipe()
-    }, [recipeId])
+    }, [recipeId, deleted])
+
+    const handleDelete = async () => {
+        try {
+            await Client.delete(`/recipes/${recipeId}`)
+            setDeleted(true)
+            setTimeout(() => {
+                history.push('/recipe-details')
+            }, 1000) 
+        } catch (error) {
+            console.error('Error deleting recipe:', error)
+        }
+    }
 
     return (
         <div className="recipe-details-container">
-            {recipe && <Recipe recipe={recipe} />}
+            {recipe && !deleted && (
+                <>
+                    <Recipe recipe={recipe} />
+                    <button onClick={handleDelete}>Delete Recipe</button>
+                </>
+            )}
+            {deleted && <p>Recipe deleted.</p>}
         </div>
     )
 }
