@@ -61,7 +61,7 @@ function App() {
           <Route path='/signin' element={<SignIn setUser={setUser} />} />
           <Route path='/register' element={<Register />} />
           <Route path="/recipes" element={RecipePage} />
-          <Route path="/recipes/:recipeId" component={RecipeDetails} />
+          <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
         </Routes>
       </main>
       <Footer />
