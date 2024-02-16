@@ -49,7 +49,6 @@ const RecipeForm = ({ recipe, userId }) => {
         }
     }
     
-    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {

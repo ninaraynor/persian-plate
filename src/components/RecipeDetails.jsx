@@ -1,15 +1,14 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Client from '../services/api'
 import Recipe from './Recipe'
-import { Link } from 'react-router-dom'
 
 
 const RecipeDetails = () => {
     const { recipeId } = useParams()
     const [recipe, setRecipe] = useState(null)
-    const [dish, setDish] = useState(null)
     const [deleted, setDeleted] = useState(false)
+    const navigate = useNavigate()
 
     useEffect(() => {
         const fetchRecipe = async () => {
@@ -45,7 +44,7 @@ const RecipeDetails = () => {
                 </>
             )}
             {deleted && <p>Recipe deleted.</p>}
-            <Link to="/dishes"><button className="dishes-button"> Back to Recipes</button></Link>
+            <button onClick={() => navigate(-1)} className="dishes-button"> Back to Recipes</button>
         </div>
     )
 }
