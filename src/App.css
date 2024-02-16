@@ -122,6 +122,7 @@ h4 {
 p {
   font-size: 13px;
   padding: 5px;
+  color: black;
 }
 
 .dish-card:hover {
@@ -185,9 +186,10 @@ p {
 
 .recipeForm {
   font-family: 'Arial', sans-serif;
-  background-color: #752B2B;
+  background-color: #c4c2c2;
   padding: 20px;
   border-radius: 8px;
+  border: 4px solid #752B2B;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin: auto; 
   max-width: 600px; 
@@ -200,6 +202,7 @@ p {
   top: 150px;
   transform: translateX(-50%); 
   z-index: 1; 
+  padding-bottom: 35px;
 }
 
 .formDiv {
@@ -236,19 +239,23 @@ textarea:focus {
 }
 
 button.formSubmit {
-  background-color: #752B2B; 
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
+  background-color: #ffffff; 
+  color: #000000;
+  padding: 6px 10px;
+  width: 100px;
+  border: 2px solid black;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  position: absolute; 
+  left: 50%; 
+  top: 670px;
+  transform: translateX(-50%); 
 }
 
 button.formSubmit:hover {
-  background-color: darken(#752B2B, 10%); 
+  border-color: #752B2B;
 }
-
 
 .footer {
   color: black;
@@ -259,6 +266,10 @@ button.formSubmit:hover {
   position: fixed;
   bottom: 0;
   left: 0;
+}
+
+.about-text {
+  color: black;
 }
 
 .footer-container {
