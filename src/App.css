@@ -98,6 +98,9 @@ h4 {
   padding: 2em;
 }
 
+.card-overlay {
+ background-color: black;
+}
 .read-the-docs {
   color: #888;
 }
