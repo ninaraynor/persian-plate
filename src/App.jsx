@@ -47,25 +47,29 @@ function App() {
 
   return (
     <div>
-      <header>
-        <Nav user={user} handleLogOut={handleLogOut} />
-      </header>
-      <main>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/dishes' element={<Dishes dishes={dishes} />} />
-          <Route path="/profile" element={<Profile userId={user?.id} />} />
-          <Route path='/addrecipe' element={<AddRecipe userId={user?.id}/>} />
-          <Route path='/about' element={<About />} />
-          <Route path='/dishes/:dishId/recipes' element={<RecipePage />} />
-          <Route path='/signin' element={<SignIn setUser={setUser} />} />
-          <Route path='/register' element={<Register />} />
-          <Route path="/recipes" element={RecipePage} />
-          <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+  <header>
+    <Nav user={user} handleLogOut={handleLogOut} />
+  </header>
+  <main style={{
+    display: 'flex',
+    justifyContent: 'center',
+    padding: '20px'
+  }}>
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/dishes' element={<Dishes dishes={dishes} />} />
+      <Route path="/profile" element={<Profile userId={user?.id} />} />
+      <Route path='/addrecipe' element={<AddRecipe userId={user?.id}/>} />
+      <Route path='/about' element={<About />} />
+      <Route path='/dishes/:dishId/recipes' element={<RecipePage />} />
+      <Route path='/signin' element={<SignIn setUser={setUser} />} />
+      <Route path='/register' element={<Register />} />
+      <Route path="/recipes" element={RecipePage} />
+      <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
+    </Routes>
+  </main>
+  <Footer />
+</div>
   )
 }
 
