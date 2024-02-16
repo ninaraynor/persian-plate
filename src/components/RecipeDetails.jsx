@@ -33,7 +33,6 @@ const RecipeDetails = () => {
             console.error('Error deleting recipe:', error)
         }
     }
-    //res.redirect
 
     return (
         <div className="recipe-details-container">

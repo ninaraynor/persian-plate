@@ -22,7 +22,7 @@ const RecipePage = () => {
 
     return (
         <div className="recipes-container">
-            <h1>Recipes</h1>
+            <h2>Recipes</h2>
             <div className="recipes-grid">
                 {recipes && recipes.map(recipe => (
                     <div className='recipe-card' key={recipe._id}>

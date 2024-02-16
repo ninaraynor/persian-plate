@@ -7,13 +7,15 @@
 }
 
 header {
-  padding: 10px 0;
+  padding: 12px 0;
   position: fixed;
   top: 0;
   width: 100%;
   height: 50px;
   justify-content: center; 
   align-items: center;
+  font-family: "Noto Sans Display", sans-serif;
+  font-size: 14px;
 }
 
 main {
@@ -44,6 +46,7 @@ nav a {
 
 nav a:hover {
   color: #752B2B;
+  font-weight: 600;
 }
 
 h1 {
@@ -59,7 +62,6 @@ h1 {
   line-height: 5;
 }
 
-
 h2 {
   position: absolute;
   top: 0;
@@ -69,6 +71,9 @@ h2 {
   font-size: 2em;
   margin-top: 30px;
   color: black;
+  font-family: "Protest Riot", sans-serif;
+  font-style: normal;
+  letter-spacing: .5px;
 }
 
 h3 {
@@ -78,10 +83,15 @@ h3 {
   transform: translateX(-50%);
   padding: 25px;
   font-size: 1.5em;
+  color: black;
+  font-family: "Noto Sans Display", sans-serif;
+  line-height: 5;
 }
 
 h4 {
   font-size: 20px;
+  color: black;
+  font-family: "Noto Sans Display", sans-serif;
 }
 
 .card {
@@ -93,24 +103,29 @@ h4 {
 }
 
 .dishes-container {
-  padding: 20px;
+  padding: 2px;
 }
 
 .dishes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 25px;
 }
 
 .dish-card {
-  border: 3px solid #752B2B;
+  border: 2px solid black;
   border-radius: 3px;
   padding: 10px;
   color: black;
 }
 
+p {
+  font-size: 13px;
+  padding: 5px;
+}
+
 .dish-card:hover {
- background-color: rgb(227, 217, 203);
+ background-color: rgb(245, 244, 241);
 }
 
 .dish-card img {
@@ -168,47 +183,24 @@ h4 {
   height: auto;
 }
 
-/* .recipeForm {
-  background-color: white;
-  padding: 24px;
-  display: flex;
-  border-radius: 16px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-label {
-  color: black;
-  display: block;
-}
-
-input {
-  background-color: white;
-  border: 1px solid black;
-  height: 24px;
-  border-radius: 6px;
-  padding: 8px 4px;
-} */
-
 .recipeForm {
   font-family: 'Arial', sans-serif;
-  color: #333;
-  background-color: #fff;
+  background-color: #752B2B;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin: auto; 
   max-width: 600px; 
-  width: 500px;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-gap: 18px; 
   position: absolute; 
   left: 50%; 
-  top: 200px;
+  top: 150px;
   transform: translateX(-50%); 
   z-index: 1; 
 }
-
-
 
 .formDiv {
   margin-bottom: 20px;
@@ -217,7 +209,10 @@ input {
 label {
   display: block;
   margin-bottom: 8px;
-  color: #752B2B; /* Primary color */
+  color: white;
+  font-family: "Noto Sans Display", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 input[type="text"],
@@ -254,10 +249,11 @@ button.formSubmit:hover {
   background-color: darken(#752B2B, 10%); 
 }
 
+
 .footer {
   color: black;
-  font-weight: 400;
-  font-size: 15px;
+  font-family: "Noto Sans Display", sans-serif;
+  font-size: 12px;
   padding: 5px 0;
   width: 100%;
   position: fixed;
