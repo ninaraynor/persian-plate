@@ -10,7 +10,7 @@ const Dishes = ({ dishes }) => {
                 <h4>{dish.title}</h4>
                 <p>{dish.description}</p>
                 <img src={dish.image} alt={dish.title}/>
-                <Link to={`/dishes/${dish._id}/recipes`}>View Recipes</Link>
+                <Link to={`/dishes/${dish._id}/recipes`} className="link-form-submit">View Recipes</Link>
                 </div>
             ))}
         </div>

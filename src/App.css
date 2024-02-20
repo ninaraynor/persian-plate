@@ -94,6 +94,12 @@ h4 {
   font-family: "Noto Sans Display", sans-serif;
 }
 
+p {
+  font-size: 13px;
+  padding: 5px;
+  color: black;
+}
+
 .card {
   padding: 2em;
 }
@@ -202,6 +208,10 @@ button.form-submit:hover {
 
 .dishes-container {
   padding: 2px;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 8px;
 }
 
 .dishes-grid {
@@ -213,14 +223,10 @@ button.form-submit:hover {
 .dish-card {
   border: 2px solid black;
   border-radius: 3px;
-  padding: 10px;
+  padding: 12px;
   color: black;
-}
-
-p {
-  font-size: 13px;
-  padding: 5px;
-  color: black;
+  display: flex; 
+  flex-direction: column; 
 }
 
 .dish-card:hover {
@@ -228,8 +234,33 @@ p {
 }
 
 .dish-card img {
-  max-width: 100%;
-  height: auto;
+  flex-grow: 1;
+  width: 100%;
+  height: 200px; 
+  object-fit: cover; 
+}
+
+.dish-card-content {
+  flex-grow: 1; 
+}
+
+.link-form-submit {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 5px 10px;
+  border: 2px solid black;
+  border-radius: 4px;
+  width: 32%; 
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 8px auto 0;
+}
+
+.link-form-submit:hover {
+  background-color: #752B2B;
+  color: #ffffff;
 }
 
 .recipes-container {
@@ -369,7 +400,6 @@ button.formSubmit:hover {
 .about-text {
   color: black;
 }
-
 
 .footer-container {
   max-width: 1280px;
