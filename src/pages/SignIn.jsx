@@ -20,11 +20,11 @@ const SignIn = (props) => {
   }
 
   return (
-    <div className="signin col">
-      <div className="card-overlay centered">
-        <form className="col" onSubmit={handleSubmit}>
+
+      <div className="signin-container">
+        <form className="signin-form" onSubmit={handleSubmit}>
           <div className="input-wrapper">
-            <label htmlFor="email">Email</label>
+            <label className="label" htmlFor="email">Email</label>
             <input
               onChange={handleChange}
               name="email"
@@ -35,7 +35,7 @@ const SignIn = (props) => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="password">Password</label>
+            <label className="label" htmlFor="password">Password</label>
             <input
               onChange={handleChange}
               type="password"
@@ -44,7 +44,7 @@ const SignIn = (props) => {
               required
             />
           </div>
-          <button disabled={!formValues.email || !formValues.password}>
+          <button className="form-submit" disabled={!formValues.email || !formValues.password}>
             Sign In
           </button>
         </form>
@@ -54,7 +54,6 @@ const SignIn = (props) => {
           </button>
         )}
       </div>
-    </div>
   )
 }
 

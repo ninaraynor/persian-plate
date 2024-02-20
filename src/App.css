@@ -98,11 +98,106 @@ h4 {
   padding: 2em;
 }
 
-.card-overlay {
- background-color: black;
-}
 .read-the-docs {
   color: #888;
+}
+
+.register-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-form {
+  font-family: 'Arial', sans-serif;
+  background-color: #c4c2c2;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.input-wrapper {
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+.label {
+  margin-bottom: 8px;
+  color: black;
+  font-family: "Noto Sans Display", sans-serif;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 300px;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #752B2B;
+}
+
+button.form-submit {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 6px 20px;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 30%; 
+  margin: 0 auto;
+}
+
+button.form-submit:hover {
+  background-color: #752B2B;
+  color: #ffffff;
+}
+
+.signin-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-form {
+  font-family: 'Arial', sans-serif;
+  background-color: #c4c2c2;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
 }
 
 .dishes-container {
