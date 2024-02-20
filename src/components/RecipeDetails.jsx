@@ -23,6 +23,8 @@ const RecipeDetails = () => {
     }, [recipeId, deleted])
 
     const handleDelete = async () => {
+        const confirmDelete = window.confirm('Are you sure you want to delete this recipe?');
+        if (confirmDelete) {
         try {
             await Client.delete(`/recipes/${recipeId}`)
             setDeleted(true)
@@ -33,17 +35,18 @@ const RecipeDetails = () => {
             console.error('Error deleting recipe:', error)
         }
     }
+}
 
     return (
         <div className="recipe-details-container">
             {recipe && !deleted && (
                 <>
                     <Recipe recipe={recipe} />
-                    <button onClick={handleDelete}>Delete Recipe</button>
+                    <button onClick={handleDelete} className="delete-recipe">Delete Recipe</button>
                 </>
             )}
             {deleted && <p>Recipe deleted.</p>}
-            <button onClick={() => navigate(-1)} className="dishes-button"> Back to Recipes</button>
+            <button onClick={() => navigate(-1)} className="recipes-button"> Back to Recipes</button>
         </div>
     )
 }

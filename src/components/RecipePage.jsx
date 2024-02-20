@@ -33,7 +33,7 @@ const RecipePage = () => {
                         <div className="recipe-image">
                             <img src={recipe.photo} alt={recipe.title} />
                         </div>
-                        <Link to={`/recipes/${recipe._id}`}>View Recipe</Link>
+                        <Link to={`/recipes/${recipe._id}`}className="link-form-submit">View Recipe</Link>
                     </div>
                     </div>
                 ))}

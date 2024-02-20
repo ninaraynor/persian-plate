@@ -8,7 +8,7 @@ const Recipe = ({ recipe }) => {
                 <p>Portion Size: {recipe.portionSize}</p>
                 <p>Prep Time: {!!recipe.prepTime && recipe.prepTime.value} {!!recipe.prepTime && recipe.prepTime.unit}</p>
                 <p>Cooking Time: {!!recipe.cookingTime && recipe.cookingTime.value} {!!recipe.cookingTime && recipe.cookingTime.unit}</p>
-                <p>Ingredients:</p>
+                <p> Ingredients:</p>
                 <ul>
                     {recipe.ingredients.map((ingredient, index) => (
                         <li key={index}>{ingredient.name} - {ingredient.quantity} {ingredient.unit}</li>
@@ -19,7 +19,7 @@ const Recipe = ({ recipe }) => {
                 <p>Unique Ingredients:</p>
                 <ul>
                     {recipe.uniqueIngredients.map((uniqueIngredient, index) => (
-                        <li key={index}>{uniqueIngredient}</li>
+                        <li className="ingredient-list" key={index}>{uniqueIngredient}</li>
                     ))}
                 </ul>
                 <p>Instructions: {recipe.instructions}</p>
